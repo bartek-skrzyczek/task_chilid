@@ -1,0 +1,45 @@
+.container {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto; }
+
+@media screen and (min-width: 992px) {
+  .container {
+    max-width: 800px; } }
+
+@media screen and (min-width: 768px) {
+  #table-wrapper {
+    display: table; } }
+
+#table {
+  width: 100%;
+  display: table; }
+  #table .table-header {
+    width: 100%;
+    display: table;
+    background-color: #E5EEFB;
+    min-height: 56px; }
+    #table .table-header .cell {
+      vertical-align: middle; }
+      #table .table-header .cell span {
+        font-family: "OpenSans-Bold";
+        color: #3A5071;
+        font-size: 14px;
+        vertical-align: middle;
+        letter-spacing: 0.66px;
+        font-weight: 600; }
+  #table .cell {
+    display: table-cell;
+    max-width: 20px;
+    min-width: 20px;
+    text-align: center; }
+  #table #table-wrapper {
+    width: 100%; }
+    #table #table-wrapper .row {
+      display: table-row;
+      width: 100%; }
+
+.pagination-page {
+  display: flex;
+  justify-content: center; }
