@@ -74,9 +74,9 @@ let obj = [
   }
 ]
 
-let div = document.createElement("div");
+let div = document.createElement("tbody");
 div.id="table-wrapper";
-document.getElementById("table").appendChild(div);
+document.getElementById("myTable").appendChild(div);
 
 for ( let i = 0; i < obj.length; i++ ) {
   let birthData = obj[i]["dateOfBirth"];
@@ -113,13 +113,13 @@ for ( let i = 0; i < obj.length; i++ ) {
 console.log(a + " " + (months[b]) + " " + c);
 
 
-  let row="<div class=row>";
-    let cell1="<div class=cell>" + obj[i]["id"] + "</div>";
-    let cell2="<div class=cell>" + obj[i]["firstName"] + "</div>";
-    let cell3="<div class=cell>" + obj[i]["lastName"] + "</div>";
-    let cell4="<div class=cell>" + a + " " + (months[b]) + " " + c + "</div>";
-    let cell5="<div class=cell>" + obj[i]["company"] + "</div>";
-    let cell6="<div class=cell>" + obj[i]["note"] + "</div></div>";
+  let row="<tr class=row>";
+    let cell1="<td class=cell>" + obj[i]["id"] + "</td>";
+    let cell2="<td class=cell>" + obj[i]["firstName"] + "</td>";
+    let cell3="<td class=cell>" + obj[i]["lastName"] + "</td>";
+    let cell4="<td class=cell>" + a + " " + (months[b]) + " " + c + "</td>";
+    let cell5="<td class=cell>" + obj[i]["company"] + "</td>";
+    let cell6="<td class=cell>" + obj[i]["note"] + "</td></tr>";
 
     document.getElementById("table-wrapper").innerHTML += row += cell1 += cell2 += cell3 += cell4 += cell5 += cell6;
   }

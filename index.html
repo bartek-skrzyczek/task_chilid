@@ -32,28 +32,19 @@
     </svg>
     <div class="container">
       <h1>Lista Pracowników</h1>
-      <div id="table">
-        <div class="table-header">
-          <div class="cell">
-            <span data-tsorter="numeric">ID</span>
-          </div>
-          <div class="cell">
-            <span data-tsorter="input">First Name</span>
-          </div>
-          <div class="cell">
-            <span data-tsorter="input">Last Name</span>
-          </div>
-          <div class="cell">
-            <span data-tsorter="numeric">Birth date</span>
-          </div>
-          <div class="cell">
-            <span data-tsorter="input">Company</span>
-          </div>
-          <div class="cell">
-            <span>Note</span>
-          </div>
-        </div>
-      </div>
+      <table class="tablesorter" id="myTable" border="0" cellspacing="0" cellpadding="0">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Birth date</th>
+            <th>Company</th>
+            <th>Note</th>
+          </tr>
+        </thead>
+      </table>
+    </div>
     <div class="pagination-page"></div>
     <span class="pagination-info"></span>
     <footer>
@@ -94,6 +85,23 @@
     <footer>
 </section>
 
+<div id="pager" class="pager">
+	<form>
+		<img src="images/first.png" class="first"/>
+		<img src="images/prev.png" class="prev"/>
+		<input type="text" class="pagedisplay"/>
+		<img src="images/next.png" class="next"/>
+		<img src="images/last.png" class="last"/>
+		<select class="pagesize">
+			<option value="">>LIMIT</option>
+			<option value="2">2 per page</option>
+			<option value="5">5 per page</option>
+			<option value="10">10 per page</option>
+
+		</select>
+	</form>
+</div>
+
 <script src="js/jquery.min.js"></script>
   <!-- plugin  -->
   <script src="js/pagination.js"></script>
@@ -105,6 +113,8 @@
   <script src="js/script.js"></script>
 
   <script src="js/color-applier.js"></script>
+
+  <script src="js/init.js"></script>
 
 </body>
 

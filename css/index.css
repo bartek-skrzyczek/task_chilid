@@ -45,9 +45,8 @@ section.main {
   .container {
     max-width: 800px; } }
 
-@media screen and (min-width: 768px) {
-  #table-wrapper {
-    display: table; } }
+table {
+  width: 100%; }
 
 h1 {
   font-size: 32px;
@@ -57,7 +56,7 @@ h1 {
   margin-top: 0px;
   margin-bottom: 30px; }
 
-#table .table-header {
+#myTable .table-header {
   border-radius: 3px 3px 0px 0px;
   width: 100%;
   display: table;
@@ -66,20 +65,20 @@ h1 {
   width: 100%;
   display: table; }
 
-#table .row {
+#myTable .row {
   width: 100%;
   display: table;
   background-color: #f9f9f9;
   min-height: 56px; }
-  #table .row .cell {
+  #myTable .row .cell {
     vertical-align: middle; }
-    #table .row .cell span {
+    #myTable .row .cell span {
       color: #3A5071;
       font-size: 14px;
       vertical-align: middle;
       letter-spacing: 0.66px;
       font-weight: 600; }
-  #table .row.bg-odd {
+  #myTable .row.bg-odd {
     background-color: #ffffff; }
 
 .cell {
