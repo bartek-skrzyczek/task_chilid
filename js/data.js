@@ -1,4 +1,4 @@
-var obj = [
+let obj = [
   {
     "id": 1,
     "firstName": "Jan",
@@ -74,18 +74,52 @@ var obj = [
   }
 ]
 
-var div = document.createElement("div");
+let div = document.createElement("div");
 div.id="table-wrapper";
 document.getElementById("table").appendChild(div);
 
-for ( var i = 0; i < obj.length; i++ ) {
-  var row="<div class=row>";
-    var cell1="<div class=cell>" + obj[i]["id"] + "</div>";
-    var cell2="<div class=cell>" + obj[i]["firstName"] + "</div>";
-    var cell3="<div class=cell>" + obj[i]["lastName"] + "</div>";
-    var cell4="<div class=cell>" + obj[i]["dateOfBirth"] + "</div>";
-    var cell5="<div class=cell>" + obj[i]["company"] + "</div>";
-    var cell6="<div class=cell>" + obj[i]["note"] + "</div></div>";
+for ( let i = 0; i < obj.length; i++ ) {
+  let birthData = obj[i]["dateOfBirth"];
+  birthData = birthData.substring(0, birthData.indexOf(' '));
+
+  let newB = birthData.split("."),
+      a = newB[0], b = newB[1], c = newB[2];
+
+  //var monthNumber = months[1];
+  //console.log(monthNumber);
+
+
+
+  let months = {
+    "01": "styczeń",
+    "1": "styczeń",
+    "02": "luty",
+    "2": "luty",
+    "03":" marzec",
+    "3":" marzec",
+    "4": "kwiecień",
+    "5": "maj",
+    "05": "maj",
+    "6": "czerwiec",
+    "7": "lipiec",
+    "8": "sierpień",
+    "9": "wrzesień",
+    "10": "październik",
+    "11": "listopad",
+    "12": "grudzień"
+  };
+
+//console.log(a + months[b] + c);
+console.log(a + " " + (months[b]) + " " + c);
+
+
+  let row="<div class=row>";
+    let cell1="<div class=cell>" + obj[i]["id"] + "</div>";
+    let cell2="<div class=cell>" + obj[i]["firstName"] + "</div>";
+    let cell3="<div class=cell>" + obj[i]["lastName"] + "</div>";
+    let cell4="<div class=cell>" + a + " " + (months[b]) + " " + c + "</div>";
+    let cell5="<div class=cell>" + obj[i]["company"] + "</div>";
+    let cell6="<div class=cell>" + obj[i]["note"] + "</div></div>";
 
     document.getElementById("table-wrapper").innerHTML += row += cell1 += cell2 += cell3 += cell4 += cell5 += cell6;
   }

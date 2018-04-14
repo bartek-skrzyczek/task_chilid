@@ -1,8 +1,45 @@
+/**
+* CSS themes for simplePagination.js
+* Author: Flavius Matis - http://flaviusmatis.github.com/
+* URL: https://github.com/flaviusmatis/simplePagination.js
+*/
+ul.simple-pagination {
+  list-style: none; }
+
+.simple-pagination {
+  display: block;
+  overflow: hidden;
+  padding: 0 5px 5px 0;
+  margin: 0; }
+
+.simple-pagination ul {
+  list-style: none;
+  padding: 0;
+  margin: 0; }
+
+.simple-pagination li {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  float: left; }
+
+body {
+  font-family: 'Open Sans', sans-serif; }
+
+section.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(to bottom, #3282ff, #5997f6, #5997f6, #3282ff); }
+
 .container {
   padding-right: 15px;
   padding-left: 15px;
   margin-right: auto;
-  margin-left: auto; }
+  margin-left: auto;
+  width: 100%; }
 
 @media screen and (min-width: 992px) {
   .container {
@@ -12,34 +49,64 @@
   #table-wrapper {
     display: table; } }
 
-#table {
+h1 {
+  font-size: 32px;
+  color: #FFFFFF;
+  letter-spacing: -0.89px;
+  text-align: center;
+  margin-top: 0px;
+  margin-bottom: 30px; }
+
+#table .table-header {
+  border-radius: 3px 3px 0px 0px;
+  width: 100%;
+  display: table;
+  background-color: #E5EEFB;
+  min-height: 56px;
   width: 100%;
   display: table; }
-  #table .table-header {
-    width: 100%;
-    display: table;
-    background-color: #E5EEFB;
-    min-height: 56px; }
-    #table .table-header .cell {
-      vertical-align: middle; }
-      #table .table-header .cell span {
-        font-family: "OpenSans-Bold";
-        color: #3A5071;
-        font-size: 14px;
-        vertical-align: middle;
-        letter-spacing: 0.66px;
-        font-weight: 600; }
-  #table .cell {
-    display: table-cell;
-    max-width: 20px;
-    min-width: 20px;
-    text-align: center; }
-  #table #table-wrapper {
+
+#table .row {
+  width: 100%;
+  display: table;
+  background-color: #f9f9f9;
+  min-height: 56px; }
+  #table .row .cell {
+    vertical-align: middle; }
+    #table .row .cell span {
+      color: #3A5071;
+      font-size: 14px;
+      vertical-align: middle;
+      letter-spacing: 0.66px;
+      font-weight: 600; }
+  #table .row.bg-odd {
+    background-color: #ffffff; }
+
+.cell {
+  display: table-cell;
+  max-width: 20px;
+  min-width: 20px;
+  text-align: center;
+  vertical-align: middle;
+  height: 56px;
+  border-right: 1px solid gray;
+  vertical-align: middle; }
+  .cell:nth-child(4) {
+    max-width: 30px;
+    min-width: 30px; }
+
+#table-wrapper {
+  width: 100%; }
+  #table-wrapper .row {
+    display: table-row;
     width: 100%; }
-    #table #table-wrapper .row {
-      display: table-row;
-      width: 100%; }
 
 .pagination-page {
   display: flex;
   justify-content: center; }
+
+footer {
+  text-align: center; }
+  footer svg {
+    height: 22px;
+    fill: white; }
