@@ -1,3 +1,15 @@
-$(function() {
-  $("#myTable").tablesorter({ sortList: [[0,0], [1,0]] });
-});
+$(document).ready(function() {
+    $('#myTable').DataTable( {
+      "iDisplayLength": 5,
+      "searching": false,
+      "bLengthChange": false,
+      "bInfo" : false,
+      "aaSorting": [],
+      "language": {
+        "paginate": {
+          "previous": "back",
+          "next": "next"
+        }
+      }
+    });
+} );

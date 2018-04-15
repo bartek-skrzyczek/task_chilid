@@ -85,11 +85,6 @@ for ( let i = 0; i < obj.length; i++ ) {
   let newB = birthData.split("."),
       a = newB[0], b = newB[1], c = newB[2];
 
-  //var monthNumber = months[1];
-  //console.log(monthNumber);
-
-
-
   let months = {
     "01": "styczeń",
     "1": "styczeń",
@@ -111,7 +106,6 @@ for ( let i = 0; i < obj.length; i++ ) {
 
 //console.log(a + months[b] + c);
 console.log(a + " " + (months[b]) + " " + c);
-
 
   let row="<tr class=row>";
     let cell1="<td class=cell>" + obj[i]["id"] + "</td>";
