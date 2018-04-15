@@ -1,6 +1,9 @@
 body {
   font-family: 'Open Sans', sans-serif;
 	color: #577198;
+	margin:0;
+	height: 100%;
+	background: linear-gradient(to bottom, #3282ff, #5997f6, #5997f6, #3282ff);
 }
 
 section {
@@ -9,8 +12,6 @@ section {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    background: linear-gradient(to bottom, #3282ff, #5997f6, #5997f6, #3282ff);
   }
 }
 
@@ -22,9 +23,39 @@ section {
   width: 100%;
 }
 
-@media screen and (min-width: 992px) {
+@media screen and (min-width: 320px) {
   .container {
-      max-width: 800px;
+  	max-width: 260px;
+  }
+}
+
+@media screen and (min-width: 420px) {
+  .container {
+  	max-width: 360px;
+  }
+}
+
+@media screen and (min-width: 480px) {
+  .container {
+  	max-width: 420px;
+  }
+}
+
+@media screen and (min-width: 576px) {
+  .container {
+  	max-width: 540px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+  	max-width: 720px;
+  }
+}
+
+@media screen and (min-width: 860px) {
+  .container {
+  	max-width: 800px;
   }
 }
 
@@ -33,14 +64,24 @@ h1 {
   color: #FFFFFF;
   letter-spacing: -0.89px;
   text-align: center;
-  margin-top: 0px;
   margin-bottom: 30px;
+	&:before {
+		display: block;
+		content: "";
+		width: 84px;
+		height: 54px;
+		background: transparent url("../assets/workers.svg") no-repeat;
+		margin: 5px auto 0px;
+	}
 }
 
 table {
 	width: 100%;
+	border-collapse: collapse;
+	-webkit-box-shadow: 0px 0px 29px 16px rgba(0,0,0,0.2);
+	-moz-box-shadow: 0px 0px 29px 16px rgba(0,0,0,0.2);
+	box-shadow: 0px 0px 29px 16px rgba(0,0,0,0.2);
 	thead {
-		height: 56px;
 		background: #E5EEFB;
  		tr {
 		  width: 100%;
@@ -48,7 +89,23 @@ table {
 		  height: 56px;
 			width: 100%;
 			th {
+				border-right: 1px solid #DAE0E9;
+				&:hover {
+					cursor: pointer;
+					text-decoration: underline;
+				}
+				&:after {
+					display: inline-block;
+			    content: "";
+			    width: 6px;
+			    height: 9px;
+					background: transparent url("../assets/drop-up-arrow.svg") no-repeat;
+					margin-left: 15px;
+				}
+			}
+			th {
 				font-size: 14px;
+				padding: 5px;
 				&:first-child {
 					border-radius: 5px 0px 0px 0px;
 				}
@@ -61,19 +118,15 @@ table {
 
 	#table-wrapper {
 		tr {
+			background-color: #ffffff;
+			&.even {
+				background-color: #F1F6FC;
+			}
 			td {
-			  display: table-cell;
-			  max-width: 20px;
-			  min-width: 20px;
 			  text-align: center;
-			  vertical-align: middle;
 			  height: 56px;
 				border-right: 1px solid #DAE0E9;
 				vertical-align: middle;
-				&:nth-child(4) {
-					max-width: 30px;
-					min-width: 30px;
-				}
 				&:nth-child(odd) {
 					font-weight: 600;
 				}
@@ -84,7 +137,7 @@ table {
 				}
 				td:last-child {
 					border-radius: 0px 0px 5px 0px;
-			}
+				}
 			}
 		}
 	}
@@ -96,11 +149,13 @@ table {
 	align-items: center;
 	margin-top: 40px;
 	color: #272F3E;
-
 	a {
 		font-size: 16px;
 		font-weight: 600;
-		cursor: pointer;
+		&:hover {
+			cursor: pointer;
+			text-decoration: underline;
+		}
 		&.paginate_button.previous {
 			color: #ffffff;
 			&:before {
@@ -108,7 +163,8 @@ table {
 				color: #ffffff;
 				margin-right: 5px;
 			}
-		} &.paginate_button.next {
+		}
+		&.paginate_button.next {
 			color: #ffffff;
 			&:after {
 				content:"\203A";
@@ -128,18 +184,68 @@ table {
 }
 
 footer {
-	text-align: center;
 	margin-top: 70px;
-	svg {
+	&:after {
+		display: block;
+		content: "";
+		width: 57px;
 		height: 22px;
-		fill: white;
+		background: transparent url("../assets/chilid-logo.svg") no-repeat;
+		margin: 0 auto;
 	}
 }
 
-tbody tr.row.odd {
-  background-color: #f9f9f9;
-}
+/*
+Max width before this PARTICULAR table gets nasty
+This query will take effect for any screen smaller than 760px
+and also iPads specifically.
+*/
+@media only screen and (max-width: 768px),
+(min-device-width: 768px) and (max-device-width: 1024px)  {
 
-table.dataTable tbody tr {
-  background-color: #ffffff;
+	/* Force table to not be like tables anymore */
+	table, thead, tbody, th, td, tr {
+		display: block;
+	}
+
+	table {
+		thead {
+			tr {
+				position: relative;
+				height: initial!important;
+				th {
+					width: 100%!important;
+					border-right: 0;
+					}
+				}
+			}
+		}
+
+
+
+	td {
+		/* Behave  like a "row" */
+		border: none;
+		border-bottom: 1px solid #eee;
+		position: relative;
+		padding-left: 50%;
+		line-height: 3;
+	}
+
+	td:before {
+		/* Now like a table header */
+		position: absolute;
+		/* Top/left values mimic padding */
+		top: 6px;
+		left: 6px;
+		width: 45%;
+		padding-right: 10px;
+		white-space: nowrap;
+	}
+	td:nth-of-type(1):before { content: "iD"; }
+	td:nth-of-type(2):before { content: "First Name"; }
+	td:nth-of-type(3):before { content: "Last Title"; }
+	td:nth-of-type(4):before { content: "Birth date"; }
+	td:nth-of-type(5):before { content: "Company"; }
+	td:nth-of-type(6):before { content: "Note"; }
 }

@@ -108,12 +108,12 @@ for ( let i = 0; i < obj.length; i++ ) {
 console.log(a + " " + (months[b]) + " " + c);
 
   let row="<tr class=row>";
-    let cell1="<td class=cell>" + obj[i]["id"] + "</td>";
-    let cell2="<td class=cell>" + obj[i]["firstName"] + "</td>";
-    let cell3="<td class=cell>" + obj[i]["lastName"] + "</td>";
-    let cell4="<td class=cell>" + a + " " + (months[b]) + " " + c + "</td>";
-    let cell5="<td class=cell>" + obj[i]["company"] + "</td>";
-    let cell6="<td class=cell>" + obj[i]["note"] + "</td></tr>";
+    let cell1="<td>" + obj[i]["id"] + "</td>";
+    let cell2="<td>" + obj[i]["firstName"] + "</td>";
+    let cell3="<td>" + obj[i]["lastName"] + "</td>";
+    let cell4="<td>" + a + " " + (months[b]) + " " + c + "</td>";
+    let cell5="<td>" + obj[i]["company"] + "</td>";
+    let cell6="<td>" + obj[i]["note"] + "</td></tr>";
 
     document.getElementById("table-wrapper").innerHTML += row += cell1 += cell2 += cell3 += cell4 += cell5 += cell6;
   }
