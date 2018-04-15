@@ -21,6 +21,7 @@ section.main {
   padding-left: 15px;
   margin-right: auto;
   margin-left: auto;
+  margin-top: 20px;
   width: 100%; }
 
 @media screen and (min-width: 320px) {
@@ -126,7 +127,8 @@ table {
       color: #ffffff; }
 
 footer {
-  margin-top: 70px; }
+  margin-top: 70px;
+  margin-bottom: 20px; }
   footer:after {
     display: block;
     content: "";

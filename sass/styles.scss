@@ -25,6 +25,7 @@ section {
   padding-left: 15px;
   margin-right: auto;
   margin-left: auto;
+	margin-top: 20px;
   width: 100%;
 }
 
@@ -169,6 +170,7 @@ table {
 
 footer {
 	margin-top: 70px;
+	margin-bottom: 20px;
 	&:after {
 		display: block;
 		content: "";
