@@ -80,7 +80,7 @@ table {
           border-radius: 0px 5px 0px 0px; }
   table #table-wrapper tr {
     background-color: #ffffff; }
-    table #table-wrapper tr.even {
+    table #table-wrapper tr:nth-child(even) {
       background-color: #F1F6FC; }
     table #table-wrapper tr td {
       text-align: center;
@@ -105,7 +105,8 @@ table {
   color: #272F3E; }
   #myTable_paginate a {
     font-size: 16px;
-    font-weight: 600; }
+    font-weight: 600;
+    text-decoration: none; }
     #myTable_paginate a:hover {
       cursor: pointer;
       text-decoration: underline; }
