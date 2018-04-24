@@ -74,13 +74,13 @@ let obj = [
   }
 ]
 
-var current_page = 1;
-var records_per_page = 5;
+let current_page = 1;
+let records_per_page = 5;
 
 function changePage(page) {
-  var btn_next = document.getElementById("btn_next");
-  var btn_prev = document.getElementById("btn_prev");
-  var listing_table = document.getElementById("myTable");
+  let btn_next = document.getElementById("btn_next");
+  let btn_prev = document.getElementById("btn_prev");
+  let listing_table = document.getElementById("myTable");
 
   if (page < 1) page = 1;
   if (page > numPages()) page = numPages();
@@ -91,7 +91,7 @@ function changePage(page) {
 
   document.getElementById("table-wrapper").innerHTML = "";
 
-  for (var i = (page-1) * records_per_page; i < (page * records_per_page) && i < obj.length; i++) {
+  for (let i = (page-1) * records_per_page; i < (page * records_per_page) && i < obj.length; i++) {
     let birthData = obj[i]["dateOfBirth"];
     birthData = birthData.substring(0, birthData.indexOf(' '));
 
@@ -131,7 +131,7 @@ function changePage(page) {
       document.getElementById("table-wrapper").innerHTML += row += cell1 += cell2 += cell3 += cell4 += cell5 += cell6;
     }
     console.log(page);
-    var page_span = document.getElementById("page");
+    let page_span = document.getElementById("page");
     page_span.innerHTML = "";
     for ( let j = 1; j <= numPages(); j++ ) {
       let pageNumber = j;
@@ -142,7 +142,7 @@ function changePage(page) {
       page_span.innerHTML += span;
     }
     let elems = document.querySelectorAll("#page a");
-    for (var i = 0; i < elems.length; i++) {
+    for (let i = 0; i < elems.length; i++) {
       console.log(elems.length);
       elems[page-1].classList.add('current');
       }
